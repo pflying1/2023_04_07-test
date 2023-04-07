@@ -7,10 +7,8 @@ function setClock() {
   let month = dateInfo.getMonth(); 
   let date = dateInfo.getDate();
   const datetext = document.getElementById("date");
-  datetext.innerHTML = `${year} +"년" + ${month} + "월" + ${date} + "일"`;
-  const timetext = document.getElementById("time");
-  timetext.innerHTML = hour +":"+ min +":"+ sec;
-
+  datetext.innerHTML = year +"-" + month + "-" + date +"오전"+ hour + "시" + min +"분" + sec ;
+  console.log(datetext)
 }
 function modiNum(time){
   if(parseInt(time)<10) {
@@ -19,7 +17,7 @@ function modiNum(time){
     return time;
   
 };
-window.onload= function() {
+onload = function() {
   setClock();
   setinterval(setClock,1000);
 }
